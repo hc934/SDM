@@ -1,0 +1,13 @@
+Hi, you must be b00705036.
+Please answer the following questions:
+
+** IdentiToken:nni4B1tc. Do NOT change this line. **
+
+Q: What is your name?
+A:
+
+
+Q: What is the difference between validation and verification?
+A:
+
+
