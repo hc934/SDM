@@ -4,13 +4,14 @@ Please answer the following questions:
 ** IdentiToken:nni4B1tc. Do NOT change this line. **
 
 Q: What is your name?
-A:
+A: 陳維婷
 
 
 Q: What is the difference between validation and verification?
-A:
+A: 如果以軟體開發來說，validation是用來確認軟體是否符合一開始的design，而verification是在開發階段中驗證我們是否正確的開發了與需求相符的軟體
 
 
 Q: What is your favorite programming language for software development?
-A:
+A: I don't really have any favorite language, but here are some programming language I have used for previous projects:
+C/C++, php, javascript
 
