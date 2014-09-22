@@ -14,4 +14,3 @@ A: 如果以軟體開發來說，validation是用來確認軟體是否符合一�
 Q: What is your favorite programming language for software development?
 A: I don't really have any favorite language, but here are some programming language I have used for previous projects:
 C/C++, php, javascript
-
