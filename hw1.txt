@@ -11,3 +11,6 @@ Q: What is the difference between validation and verification?
 A:
 
 
+Q: What is your favorite programming language for software development?
+A:
+
