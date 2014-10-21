@@ -1,0 +1,12 @@
+<h3>View All Issues</h3>
+<table class="table">
+	<tr>
+		<td><strong>Topic</strong></td>
+		<td><strong>Author</strong></td>
+	</tr>
+	<tr ng-repeat="issue in issues">
+		<td><a href="" ng-click="main.page='viewforum';GetThisIssue(issue);viewcomment()">{{issue.issue_name}}</td>
+		<td ng-bind="issue.usrname">{{issue.usrname}}</td>
+	</tr>	
+</table>
+<button type="button" class="btn btn-primary" ng-click="main.page='index';viewissue()">Back</button>
