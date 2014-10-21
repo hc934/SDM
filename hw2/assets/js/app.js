@@ -13,6 +13,7 @@ MyApp.controller('BoardCtrl',function($scope, $http){
 	$scope.main = {};
 	$scope.main.page = "index";
 	$scope.predicate = "issue_id";
+	$scope.reverse = true;
 
 	$scope.$watch('$viewContentLoaded', function(e){
 		$scope.viewissue();
