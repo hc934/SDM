@@ -12,7 +12,7 @@ MyApp.controller('BoardCtrl',function($scope, $http){
 	$scope.comments = {};
 	$scope.main = {};
 	$scope.main.page = "index";
-	//$scope.predicate = 'issue_id';
+	$scope.predicate = "issue_id";
 
 	$scope.$watch('$viewContentLoaded', function(e){
 		$scope.viewissue();
@@ -25,11 +25,6 @@ MyApp.controller('BoardCtrl',function($scope, $http){
 		else{
 			post.comments_id = 1;
 		}
-		
-		console.log(post.comments_id);
-		// var time = new Date();
-		// console.log(time.toISOString().substring(0,10));
-		// post.timestamp = time.toISOString().substring(0,10);
 		post.timestamp = new Date();
 		post.issue_id = $scope.currentIssue.issue_id;
 		$http({
@@ -37,12 +32,13 @@ MyApp.controller('BoardCtrl',function($scope, $http){
         url:"addcomment.php",
         data:JSON.stringify(post)
 	    }).success(function(data) {
-	      console.log("success!!");
-	      //$scope.comments_id += 1;
+		    console.log("success!!");
+		    $scope.main.page = "viewforum";
+		  	$scope.viewcomment();
 	    }).error(function(data, status) {
 	    	console.log("fail!");
 		});
-	  	//$scope.viewcomment();
+	  	
 	}
 
 	$scope.viewcomment = function(){
@@ -60,25 +56,25 @@ MyApp.controller('BoardCtrl',function($scope, $http){
 	}
 
 	$scope.addissue = function(post){
-		//post.issue_id = $scope.issue_id; //serial id
 		if($scope.issueidlist.length !== 0){
 			post.issue_id = $scope.getMaxOfArray($scope.issueidlist)+1;
 		}
 		else{
 			post.issue_id = 1;
 		}
-		//post.issue_id = $scope.getMaxOfArray($scope.issueidlist)+1;
 		$http({
         method:'POST',
         url:"addissue.php",
         data:JSON.stringify(post)
 	    }).success(function(data) {
 	      console.log("success!!");
-	      //$scope.issue_id += 1;
+	      //$scope.main.page = "index";
+	  	  $scope.viewissue();
 	    }).error(function(data, status) {
 	    	console.log("fail!");
 		});
-	  	//$scope.viewissue();
+	  	
+	  	//$scope.$apply();
 	}
 
 	$scope.viewissue = function(){
@@ -88,8 +84,9 @@ MyApp.controller('BoardCtrl',function($scope, $http){
         url:"viewissue.php"
 	    }).success(function(data) {
 	      $scope.issues = data;
+	      console.log(data);
 	      data.forEach(function(element){
-	      	$scope.issueidlist.push(element.issue_id);
+	       	$scope.issueidlist.push(element.issue_id);
 	      });
 	    }).error(function(data, status) {
 	    	console.log("fail!");

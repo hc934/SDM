@@ -1,4 +1,4 @@
-<?
+<?php
 $cfgDB_HOST = "sdm2.im.ntu.edu.tw";
 $cfgDB_USERNAME = "b00705036";
 $cfgDB_PASSWORD = "nni4B1tc";

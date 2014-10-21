@@ -8,11 +8,6 @@
 <body ng-app="MyApp">
 <div ng-controller="BoardCtrl">
 	<div class="container-fluid" ng-hide="main.page!='index'">
-		<!-- <div class="row">
-			<button type="button" class="btn btn-primary" ng-click="adduser()">User!</button>
-			<button type="button" class="btn btn-primary" ng-click="addcomment()">Comment!</button>
-			<button type="button" class="btn btn-primary" ng-click="viewissue()">showIssue!</button>
-		</div> -->
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8"><h3>New Issue</h3></div>
@@ -32,7 +27,7 @@
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
-		      <button type="button" class="btn btn-primary" ng-click="addissue(add_Issue);main.page='index'">Create</button>
+		      <button type="button" class="btn btn-primary" ng-click="addissue(add_Issue)">Create</button>
 		    </div>
 		  </div>
 		</form>
@@ -49,9 +44,9 @@
 						<td><strong>Topic</strong></td>
 						<td><strong>Author</strong></td>
 					</tr>
-					<tr ng-repeat="issue in issues | orderBy:'issue_id':reverse=true">
-						<td><a href="" ng-click="main.page='viewforum';GetThisIssue(issue);viewcomment()" ng-bind="issue.issue_name"><!-- {{issue.issue_name}} --></a></td>
-						<td ng-bind="issue.usrname"><!-- {{issue.usrname}} --></td>
+					<tr ng-repeat="issue in issues | orderBy:predicate:reverse=true">
+						<td><a href="" ng-click="main.page='viewforum';GetThisIssue(issue);viewcomment()" ng-bind="issue.issue_name"></a></td>
+						<td ng-bind="issue.usrname"></td>
 					</tr>	
 				</table>
 			</div>
