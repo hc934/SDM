@@ -12,7 +12,8 @@ struct InputEventData : public ObserverData
   char mInput;
 };
 
-class InputReader : public Subject
+class InputReader: 
+  public Subject
 {
 public:
   InputReader()

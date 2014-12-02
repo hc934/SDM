@@ -1,7 +1,7 @@
-#include "InputReader.h"
 #include "Observer.h"
-
-#include "InputReaderAdapter.h"
+#include "InputReader.h"
+#include "InputReaderAdapterImpl.h"
+#include "InputObserver.h"
 
 static void*
 InputReaderThread(void* aInputReader)
